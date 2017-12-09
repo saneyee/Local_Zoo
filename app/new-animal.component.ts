@@ -2,30 +2,57 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { Animal } from './animal.model';
 
 @Component({
-  selector: 'new-animal',
-  template: `
-    <h1>New Animal</h1>
+    selector: 'new-animal',
+    template: `
+    <h1>Add New Animal</h1>
+    <form>
     <div>
-     <label>Enter Animal Description:</label>
-     <input #newDescription>
-   </div>
-   <div>
-    <label>Animal Priority:</label>
-    <select #newPriority>
-      <option [value]="1"> Low Priority </option>
-      <option [value]="2"> Medium Priority </option>
-      <option [value]="3"> High Priority </option>
-    </select>
-    <button (click)="submitForm(newDescription.value, newPriority.value); newDescription.value='';">Add</button>
+    <label>Species:</label>
+    <input #newSpecies>
     </div>
-  `
+    <div>
+    <label>Name:</label>
+    <input #newName>
+    </div>
+    <div>
+    <label>Age:</label>
+    <input #newAge>
+    </div>
+    <div>
+    <label>Diet:</label>
+    <input #newDiet>
+    </div>
+    <div>
+    <label>Location:</label>
+    <input #newLocation>
+    </div>
+    <div>
+    <label>Caretakers:</label>
+    <input #newCaretakers>
+    </div>
+    <div>
+    <label>Sex:</label>
+    <input #newSex>
+    </div>
+    <div>
+    <label>Like:</label>
+    <input #newLike>
+    </div>
+    <div>
+    <label>Dislike:</label>
+    <input #newDislike>
+    </div>
+
+    <button (click)="submitForm(newSpecies.value, newName.value,newAge.value,newDiet.value,newLocation.value,newCaretakers.value,newSex.value,newLike.value,newDislike.value)">Add</button>
+    </form>
+    `
 })
 
 export class NewAnimalComponent {
-  @Output() newAnimalSender = new EventEmitter();
+    @Output() newAnimalSender = new EventEmitter();
 
-  submitForm(description: string, priority: number) {
-    var newAnimalToAdd: Animal = new Animal(description, priority);
-    this.newAnimalSender.emit(newAnimalToAdd);
-  }
+    submitForm(species: string, name: string, age: number, diet: string, location: string, caretakers: number, sex: string, like: string, dislike: string) {
+        var newAnimalToAdd: Animal = new Animal(species, name, age, diet, location, caretakers, sex, like, dislike);
+        this.newAnimalSender.emit(newAnimalToAdd);
+    }
 }
