@@ -1,16 +1,16 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { Task } from './task.model';
+import { Animal } from './animal.model';
 
 @Component({
-  selector: 'new-task',
+  selector: 'new-animal',
   template: `
-    <h1>New Task</h1>
+    <h1>New Animal</h1>
     <div>
-     <label>Enter Task Description:</label>
+     <label>Enter Animal Description:</label>
      <input #newDescription>
    </div>
    <div>
-    <label>Task Priority:</label>
+    <label>Animal Priority:</label>
     <select #newPriority>
       <option [value]="1"> Low Priority </option>
       <option [value]="2"> Medium Priority </option>
@@ -21,11 +21,11 @@ import { Task } from './task.model';
   `
 })
 
-export class NewTaskComponent {
-  @Output() newTaskSender = new EventEmitter();
+export class NewAnimalComponent {
+  @Output() newAnimalSender = new EventEmitter();
 
   submitForm(description: string, priority: number) {
-    var newTaskToAdd: Task = new Task(description, priority);
-    this.newTaskSender.emit(newTaskToAdd);
+    var newAnimalToAdd: Animal = new Animal(description, priority);
+    this.newAnimalSender.emit(newAnimalToAdd);
   }
 }
