@@ -13,7 +13,7 @@ import { Animal } from './animal.model';
 
     <ul>
       <li *ngFor="let currentAnimal of childAnimalList |
-       age:filterByAge">{{currentAnimal.species}} {{currentAnimal.name}} {{currentAnimal.age}} {{currentAnimal.diet}} {{currentAnimal.location}} {{currentAnimal.caretakers}} {{currentAnimal.sex}} {{currentAnimal.like}} {{currentAnimal.dislike}}
+       age:filterByAge">Species :{{currentAnimal.species}} | Name :{{currentAnimal.name}} | Age :{{currentAnimal.age}} | Diet :{{currentAnimal.diet}} | Location :{{currentAnimal.location}} | Caretakers :{{currentAnimal.caretakers}} | Sex :{{currentAnimal.sex}} | Like :{{currentAnimal.like}} | Dislike :{{currentAnimal.dislike}}
         <input *ngIf="currentAnimal.done === true" type="checkbox" checked (click)="toggleDone(currentAnimal, false)"/>
         <input *ngIf="currentAnimal.done === false" type="checkbox" (click)="toggleDone(currentAnimal, true)"/>
         <button (click)="editButtonHasBeenClicked(currentAnimal)">Edit!</button>
