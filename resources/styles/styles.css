@@ -1,9 +1,20 @@
 body {
   background-image: url("https://media.giphy.com/media/12kd8g767vzGXm/giphy.gif");
-  background-size: cover;
+  background-size: 70%;
   background-repeat: no-repeat;
-  
   text-align: left;
+  background-position: bottom;
 
+}
 
+button {
+    border: 3px solid #4ef442;
+
+}
+input {
+    border: 1px solid #4ef442;
+}
+h1 {
+    text-shadow: 1px 1px  3px #4ef442;
+    text-align: center;
 }
