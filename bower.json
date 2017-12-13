@@ -6,7 +6,7 @@
     "Saneyee Sarkar <saneyeesarkar@gmail.com>"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/saneyee/Local_Zoo",
   "ignore": [
     "**/.*",
     "node_modules",
